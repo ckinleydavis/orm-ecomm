@@ -1,12 +1,13 @@
+// Import sequelize library and db conn from config.js
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-/* Initialize Category model (table) by extending
+/* Initialize ProductTag model (table) by extending
    off Sequelize's Model class */
-class Category extends Model{};
+class Tag extends Model{};
 
 // Set up fields and rules for Category model
-Category.init(
+Tag.init(
 {
     id: {
         type: DataTypes.INTEGER,
@@ -14,7 +15,7 @@ Category.init(
         primaryKey: true,
         autoIncrement: true
     },
-    category_name: {
+    tag_name: {
         type: DataTypes.STRING,
         allowNull: false
     }
@@ -24,7 +25,7 @@ Category.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'category'
+    modelName: 'tag',
 });
 
-module.exports = Category;
+module.exports = Tag;
