@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { Category, Product } = require('../../models');
 
+// Get All Existing Categories and its Products
 router.get("/", async (req, res) => {
-    // Get All Categories with their Products
     try{
         const categoryData = await Category.findAll({
             include: {
@@ -16,3 +16,20 @@ router.get("/", async (req, res) => {
         res.status(500).json(err)
     }
 });
+
+// Create New Category
+router.post("/", async (req, res) => {
+    try {
+
+    } catch (err) {
+
+    }
+});
+
+// Find Category and its Products by ID
+
+// Update Category
+
+// Delete Category
+
+module.exports = router;
