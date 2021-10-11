@@ -1,6 +1,8 @@
 /* Import web server, controller api routes
    and create db connection object */
+
 const express = require('express');
+// import express, { json, urlencoded } from 'express';
 const routes = require('./routes');
 const sequelize = require('./config/connection');
 
@@ -15,7 +17,6 @@ app.use(routes);
 /* Connect to database, force false so data isn't 
    dropped on sync, then start the web server */
 sequelize.sync({ force: false }).then(() => {
-    app.listen(port, () => {
-        console.log(`App listening on port ${port}!`);
-    });
+    app.listen(PORT, () => 
+        console.log(`App listening on port ${PORT}!`));
 });
